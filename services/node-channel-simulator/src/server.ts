@@ -28,7 +28,14 @@ const sendSchema = z.object({
 app.use(cors({ origin: process.env.CORS_ORIGIN ?? "*" }));
 app.use(express.json());
 
-app.get("/health", (_req, res) => res.json({ status: "ok", service: "xeno-channel-simulator" }));
+app.get("/", (_req, res) => {
+  res.json({ message: "Server is running", service: "xeno-channel-simulator" });
+});
+
+app.get("/health", (_req, res) => {
+  res.json({ status: "ok", service: "xeno-channel-simulator" });
+});
+
 
 app.post("/send", (req, res) => {
   const payload = sendSchema.parse(req.body);
