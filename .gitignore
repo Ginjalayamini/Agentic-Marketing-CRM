@@ -1,12 +1,33 @@
+# Environment Variables
 .env
+.env.local
+
+# Python
 .venv/
 venv/
 __pycache__/
 *.pyc
 .pytest_cache/
+
+# Node.js
 node_modules/
+
+# Next.js
 .next/
 out/
+
+# Build Files
 dist/
+
+# Deployment
 .vercel/
+
+# IDE
+.vscode/
+
+# Logs
+*.log
+
+# OS Files
 .DS_Store
+Thumbs.db
