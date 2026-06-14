@@ -188,8 +188,9 @@ Open `http://localhost:3000`.
 - Deploy `services/node-api` to Render or Railway.
 - Deploy `services/node-channel-simulator` to Render or Railway.
 - Use MongoDB Atlas for production.
+- For `services/node-api`, set `MONGODB_URI` or `DATABASE_URL` in Render.
+- For `services/node-api`, set `OPENAI_API_KEY`, `CHANNEL_SERVICE_URL`, `PUBLIC_API_URL`, and `CORS_ORIGIN`.
 - Set `NEXT_PUBLIC_API_URL` in Vercel to the deployed CRM API URL.
-- Set `CHANNEL_SERVICE_URL` and `PUBLIC_API_URL` in the CRM API service.
 
 ## Scale Assumptions
 

@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: campaignpilot-api
+    name: campaignpilot-api-python
     env: python
     rootDir: services/api
     buildCommand: pip install -r requirements.txt
@@ -17,8 +17,35 @@ services:
       - key: CORS_ORIGINS
         sync: false
   - type: web
-    name: campaignpilot-channel-simulator
-    env: python
-    rootDir: services/channel-simulator
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    name: campaignpilot-api-node
+    env: node
+    rootDir: services/node-api
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        sync: false
+      - key: CHANNEL_SERVICE_URL
+        sync: false
+      - key: PUBLIC_API_URL
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
+      - key: NODE_ENV
+        value: production
+        sync: false
+  - type: web
+    name: campaignpilot-channel-simulator-node
+    env: node
+    rootDir: services/node-channel-simulator
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: CORS_ORIGIN
+        sync: false

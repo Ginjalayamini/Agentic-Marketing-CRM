@@ -6,7 +6,7 @@
 2. Copy the connection string.
 3. Set `DATABASE_URL` in Render for the CRM API.
 
-## Render: CRM API
+## Render: Python CRM API (optional)
 
 - Root directory: `services/api`
 - Build command: `pip install -r requirements.txt`
@@ -17,6 +17,28 @@
   - `CHANNEL_SIMULATOR_URL`
   - `PUBLIC_API_URL`
   - `CORS_ORIGINS`
+
+## Render: Node CRM API
+
+- Root directory: `services/node-api`
+- Build command: `npm install && npm run build`
+- Start command: `npm start`
+- Environment:
+  - `MONGODB_URI` or `DATABASE_URL`
+  - `OPENAI_API_KEY`
+  - `OPENAI_MODEL`
+  - `CHANNEL_SERVICE_URL`
+  - `PUBLIC_API_URL`
+  - `CORS_ORIGIN`
+  - `NODE_ENV=production`
+
+## Render: Node Channel Simulator
+
+- Root directory: `services/node-channel-simulator`
+- Build command: `npm install && npm run build`
+- Start command: `npm start`
+- Environment:
+  - `CORS_ORIGIN`
 
 Run seed once from a Render shell:
 
