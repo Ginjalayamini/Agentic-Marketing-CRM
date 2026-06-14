@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0c1015;
+  color: #e8eef5;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-teal/70 focus:ring-offset-2 focus:ring-offset-background;
+}
+
+.css-loaded-marker {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 9999;
+  border: 1px solid rgba(56, 217, 194, 0.45);
+  border-radius: 6px;
+  background: rgba(12, 16, 21, 0.92);
+  color: #38d9c2;
+  padding: 6px 8px;
+  font-size: 11px;
+  pointer-events: none;
+}

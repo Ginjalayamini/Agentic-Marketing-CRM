@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: campaignpilot-api
+    env: python
+    rootDir: services/api
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: CHANNEL_SIMULATOR_URL
+        sync: false
+      - key: PUBLIC_API_URL
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+  - type: web
+    name: campaignpilot-channel-simulator
+    env: python
+    rootDir: services/channel-simulator
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
