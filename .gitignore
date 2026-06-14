@@ -1,12 +1,46 @@
+<<<<<<< HEAD
 .env
+=======
+# Environment Variables
+.env
+.env.local
+
+# Python
+>>>>>>> f8d50dcbbc682286bb73422275cf8f818c6cc94c
 .venv/
 venv/
 __pycache__/
 *.pyc
 .pytest_cache/
+<<<<<<< HEAD
 node_modules/
 .next/
 out/
 dist/
 .vercel/
 .DS_Store
+=======
+
+# Node.js
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Build Files
+dist/
+
+# Deployment
+.vercel/
+
+# IDE
+.vscode/
+
+# Logs
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+>>>>>>> f8d50dcbbc682286bb73422275cf8f818c6cc94c
